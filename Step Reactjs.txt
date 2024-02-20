@@ -38,6 +38,11 @@
    public
      assets
         images
+8. install sweetalert
+   npm install sweetalert2
+
+=============================================
+
 
 Backend Laravel 
 1. Install Laragon

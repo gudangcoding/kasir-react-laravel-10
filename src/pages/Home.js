@@ -1,112 +1,16 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import React, { Component } from "react";
-import { Col, ListGroup, Row, Card, Button, Badge, Form } from "react-bootstrap";
-import {
-  faCartShopping,
-  faUtensils,
-  faCoffee,
-  faCheese,
-} from "@fortawesome/free-solid-svg-icons";
+import { Row} from "react-bootstrap";
+import { Hasil, ListCategories, Menus } from "../components";
 
 export default class Home extends Component {
   render() {
     return (
       <div className="mt-3">
         <Row>
-          <Col md={2} className="mt-3">
-            <h4>
-              <strong>Kategori</strong>
-            </h4>
-            <hr />
-            <ListGroup>
-              <ListGroup.Item>
-                <FontAwesomeIcon icon={faUtensils} className="mr-2" />
-                Makanan
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <FontAwesomeIcon icon={faCoffee} className="mr-2" />
-                Minuman
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <FontAwesomeIcon icon={faCheese} className="mr-2" />
-                Cemilan
-              </ListGroup.Item>
-             
-            </ListGroup>
-          </Col>
-
-          <Col className="mt-3">
-            <h4>
-              <strong>Daftar Produk</strong>
-            </h4>
-            <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Cari Produk"
-            />
-          </Form>
-            <hr />
-            <Row className="overflow-auto menu">
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src="../assets/images/default.png" />
-                <Card.Body>
-                  <Card.Title>Nasi Goreng</Card.Title>
-                  <Card.Text>Rp. 15.000</Card.Text>
-                  <Button variant="primary">
-                    <FontAwesomeIcon icon={faCartShopping} className="mr-2" />
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Row>
-          </Col>
-
-          <Col md={3} className="mt-3">
-            <h4>
-              <strong>Transaksi</strong>
-            </h4>
-            <hr />
-            <Card className="overflow-auto hasil">
-              <ListGroup variant="flush">
-                <ListGroup.Item>
-                  <Row>
-                    <Col xs={2}>
-                      <h4>
-                        <Badge pill variant="success">
-                          1
-                        </Badge>
-                      </h4>
-                    </Col>
-                    <Col>
-                      <h5>Nama Produk</h5>
-                      <p>Rp. 1500</p>
-                    </Col>
-                    <Col>
-                      <strong className="float-right">Rp. 1500</strong>
-                    </Col>
-                  </Row>
-                </ListGroup.Item>
-              </ListGroup>
-            </Card>
-            <div className="fixed-bottom d-none d-md-block">
-              <Row>
-                <Col md={{ span: 3, offset: 9 }} className="px-4">
-                  <h4>
-                    Total Harga : Rp 15.000
-                    <strong className="float-right mr-2"></strong>
-                  </h4>
-
-                  <div className="d-grid gap-2">
-                    <Button variant="primary" size="lg">
-                      <FontAwesomeIcon icon={faCartShopping}  className="mr-2"/>
-                      <strong>BAYAR</strong>
-                    </Button>
-                  </div>
-                </Col>
-              </Row>
-            </div>
-          </Col>
+          <ListCategories />
+          <Menus />
+          <Hasil />
         </Row>
       </div>
     );

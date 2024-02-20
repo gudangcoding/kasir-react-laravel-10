@@ -1,0 +1,36 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { Component } from 'react'
+import { Button, Card, Col, Form, Row } from 'react-bootstrap'
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+export default class Menus extends Component {
+  render() {
+    return (
+      <Col className="mt-3">
+      <h4>
+        <strong>Daftar Produk</strong>
+      </h4>
+      <Form className="d-flex">
+        <Form.Control
+          type="search"
+          placeholder="Search"
+          className="me-2"
+          aria-label="Cari Produk"
+        />
+      </Form>
+      <hr />
+      <Row className="overflow-auto menu">
+        <Card style={{ width: "18rem" }}>
+          <Card.Img variant="top" src="../assets/images/default.png" />
+          <Card.Body>
+            <Card.Title>Nasi Goreng</Card.Title>
+            <Card.Text>Rp. 15.000</Card.Text>
+            <Button variant="primary">
+              <FontAwesomeIcon icon={faCartShopping} className="mr-2" />
+            </Button>
+          </Card.Body>
+        </Card>
+      </Row>
+    </Col>
+    )
+  }
+}

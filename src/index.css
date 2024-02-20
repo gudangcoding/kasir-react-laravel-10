@@ -12,12 +12,23 @@ code {
   monospace;
 }
 
+
+.navbar {
+  background-color: #640933;
+}
+
+.category-aktif {
+  background-color: #22668A;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #22668A;
+}
+
 a{
   text-decoration: none;
-  color: black;
-}
-.nav{
-  background-color: aqua;
+  color:white;
 }
 
 

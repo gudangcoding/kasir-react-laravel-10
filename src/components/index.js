@@ -1,3 +1,5 @@
 import NavbarComponents from "./NavbarComponents";
-
-export{NavbarComponents}
+import ListCategories from "./ListCategories";
+import Menus from "./Menus";
+import Hasil from "./Hasil";
+export{NavbarComponents,ListCategories,Menus,Hasil}

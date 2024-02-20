@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home, Kategori, Produk, Sukses, Transaksi, User } from "./pages";
 import { NavbarComponents } from "./components";
 import { Container } from "react-bootstrap";
+
 function App() {
   return (
     <BrowserRouter>
