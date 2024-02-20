@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { Component } from "react";
-import { Col, ListGroup, Row, Card, Button, Badge } from "react-bootstrap";
+import { Col, ListGroup, Row, Card, Button, Badge, Form } from "react-bootstrap";
 import {
   faCartShopping,
   faUtensils,
@@ -39,6 +39,14 @@ export default class Home extends Component {
             <h4>
               <strong>Daftar Produk</strong>
             </h4>
+            <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Cari Produk"
+            />
+          </Form>
             <hr />
             <Row className="overflow-auto menu">
               <Card style={{ width: "18rem" }}>
