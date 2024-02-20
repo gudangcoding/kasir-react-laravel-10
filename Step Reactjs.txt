@@ -1,0 +1,77 @@
+1. npx create-react-app my-app
+   cd my-app
+   npm start
+2. npm install react-bootstrap bootstrap
+3. install font awesome
+   npm i --save @fortawesome/fontawesome-svg-core
+   npm install --save @fortawesome/free-solid-svg-icons
+   npm install --save @fortawesome/react-fontawesome
+4. install axios
+   npm i axios
+5. install router
+   npm i react-router-dom
+6. install jsonplaceholder server
+   buat fil db.json
+   install json server
+   npm install json-server
+   //mendaftarkan
+   npx json-server db.json
+   //menjalankan
+   json-server --watch db.json
+7. buat struktur folder
+   src
+      components
+        Hasil.js
+        ListCategories.js
+        Menus.js
+        ModalKeranjang.js
+        NavbarComponents.js
+        TotalBayar.js
+        index.js
+      pages
+        Home.js
+        Sukses.js
+        index.js
+      utils
+        constants.js
+        utils.js
+   public
+     assets
+        images
+
+Backend Laravel 
+1. Install Laragon
+2. Install Laravel cli
+   composer global require laravel/installer
+   contoh : laravel new nama_proyek
+3. laravel tinker 
+   composer require laravel/tinker
+4. install laravel blueprint
+   composer require -W --dev laravel-shift/blueprint
+5. Buat file draft.yaml di root proyek
+6. buat blueprint databasenya
+   contoh :
+   models:
+  Post:
+    title: string:400
+    content: longtext
+    published_at: nullable timestamp
+
+controllers:
+  Post:
+    index:
+      query: all
+      render: post.index with:posts
+
+    store:
+      validate: title, content
+      save: post
+      send: ReviewNotification to:post.author with:post
+      dispatch: SyncMedia with:post
+      fire: NewPost with:post
+      flash: post.title
+      redirect: post.index
+7. buat rest api
+8.buat dokumentasi via thunder client
+
+

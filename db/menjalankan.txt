@@ -1,0 +1,4 @@
+1 install server
+npx json-server db.json
+2. menjalankan
+json-server --watch db.json
