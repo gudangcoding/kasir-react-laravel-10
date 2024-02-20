@@ -26,17 +26,18 @@ export default class Hasil extends Component {
   }
 
   componentDidUpdate(prevState) {
-    if (this.state.keranjangs !== prevState.keranjangs) {
+    if (this.state.isikeranjang !== prevState.isikeranjang) {
       axios
         .get(API_URL + "keranjang")
         .then((res) => {
           this.setState({ isikeranjang: res.data });
         })
         .catch((error) => {
-          console.log("Error yaa ", error);
+          console.error("Error fetching data: ", error);
         });
     }
   }
+  
 
   render() {
     const { isikeranjang } = this.state;
@@ -46,7 +47,7 @@ export default class Hasil extends Component {
           <strong>Transaksi</strong>
         </h4>
         <hr />
-
+        {isikeranjang.length !== 0 && (
         <Card className="overflow-auto hasil">
           <ListGroup variant="flush">
             {isikeranjang &&
@@ -77,6 +78,7 @@ export default class Hasil extends Component {
               ))}
           </ListGroup>
         </Card>
+        )}
       </Col>
     );
   }

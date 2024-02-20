@@ -185,8 +185,8 @@
   ],
   "keranjang": [
     {
-      "jumlah": 10,
-      "total_harga": 136000,
+      "jumlah": 11,
+      "total_harga": 151000,
       "product": {
         "id": 10,
         "kode": "K-010",
@@ -251,6 +251,74 @@
         }
       },
       "id": 4
+    },
+    {
+      "jumlah": 1,
+      "total_harga": 5000,
+      "product": {
+        "id": 8,
+        "kode": "K-08",
+        "nama": "Pangsit 6 pcs",
+        "harga": 5000,
+        "is_ready": true,
+        "gambar": "pangsit.jpg",
+        "category": {
+          "id": 3,
+          "nama": "Cemilan"
+        }
+      },
+      "id": 5
+    },
+    {
+      "jumlah": 1,
+      "total_harga": 14000,
+      "product": {
+        "id": 7,
+        "kode": "K-07",
+        "nama": "Mie Ayam Bakso",
+        "harga": 14000,
+        "is_ready": true,
+        "gambar": "mie-ayam-bakso.jpg",
+        "category": {
+          "id": 1,
+          "nama": "Makanan"
+        }
+      },
+      "id": 6
+    },
+    {
+      "jumlah": 1,
+      "total_harga": 5000,
+      "product": {
+        "id": 9,
+        "kode": "K-09",
+        "nama": "Kentang Goreng",
+        "harga": 5000,
+        "is_ready": true,
+        "gambar": "kentang-goreng.jpg",
+        "category": {
+          "id": 3,
+          "nama": "Cemilan"
+        }
+      },
+      "id": 7
+    },
+    {
+      "jumlah": 2,
+      "total_harga": 6000,
+      "product": {
+        "id": 14,
+        "kode": "K-014",
+        "nama": "Teh Hangat",
+        "harga": 3000,
+        "is_ready": true,
+        "gambar": "teh-hangat.jpg",
+        "category": {
+          "id": 2,
+          "nama": "Minuman"
+        }
+      },
+      "id": 8
     }
   ],
   "order": [

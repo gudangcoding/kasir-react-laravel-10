@@ -12,6 +12,7 @@ export default class Menus extends Component {
 
     this.state = {
       menus: [],
+      searchValue: "", // 1. State untuk Pencarian
     };
   }
 
@@ -81,8 +82,17 @@ export default class Menus extends Component {
       });
   };
 
+  handleSearchChange = (event) => {
+    // 2. Fungsi Pencarian
+    this.setState({ searchValue: event.target.value });
+  };
+
   render() {
-    const { menus } = this.state;
+    const { menus, searchValue } = this.state;
+    // 3. Penanganan Pencarian
+    const filteredMenus = menus.filter((menu) =>
+      menu.nama.toLowerCase().includes(searchValue.toLowerCase())
+    );
     return (
       <Col className="mt-3">
         <h4>
@@ -94,36 +104,37 @@ export default class Menus extends Component {
             placeholder="Search"
             className="me-2"
             aria-label="Cari Produk"
+            value={searchValue} // Menyambungkan nilai pencarian dengan input
+            onChange={this.handleSearchChange} // Menangani perubahan nilai pencarian
           />
         </Form>
         <hr />
         <Row className="overflow-auto menu">
-          {menus &&
-            menus.map((menu) => (
-              <Col
-                md={4}
-                xs={6}
-                className="mb-4"
-                key={menu.id}
-                onClick={() => this.masukKeranjang(menu)}
-              >
-                <Card style={{ width: "16rem" }}>
-                  <Card.Img
-                    variant="top"
-                    src={
-                      "assets/images/" +
-                      menu.category.nama.toLowerCase() +
-                      "/" +
-                      menu.gambar
-                    }
-                  />
-                  <Card.Body>
-                    <Card.Title>{menu.nama}</Card.Title>
-                    <Card.Text>Rp. {numberWithCommas(menu.harga)}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
+          {filteredMenus.map((menu) => (
+            <Col
+              md={4}
+              xs={6}
+              className="mb-4"
+              key={menu.id}
+              onClick={() => this.masukKeranjang(menu)}
+            >
+              <Card style={{ width: "16rem" }}>
+                <Card.Img
+                  variant="top"
+                  src={
+                    "assets/images/" +
+                    menu.category.nama.toLowerCase() +
+                    "/" +
+                    menu.gambar
+                  }
+                />
+                <Card.Body>
+                  <Card.Title>{menu.nama}</Card.Title>
+                  <Card.Text>Rp. {numberWithCommas(menu.harga)}</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
         </Row>
       </Col>
     );
