@@ -1,7 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { Component } from "react";
 import { Col, ListGroup, Row, Card, Button, Badge } from "react-bootstrap";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCartShopping,
+  faUtensils,
+  faCoffee,
+  faCheese,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default class Home extends Component {
   render() {
@@ -14,7 +19,19 @@ export default class Home extends Component {
             </h4>
             <hr />
             <ListGroup>
-              <ListGroup.Item>List</ListGroup.Item>
+              <ListGroup.Item>
+                <FontAwesomeIcon icon={faUtensils} className="mr-2" />
+                Makanan
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <FontAwesomeIcon icon={faCoffee} className="mr-2" />
+                Minuman
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <FontAwesomeIcon icon={faCheese} className="mr-2" />
+                Cemilan
+              </ListGroup.Item>
+             
             </ListGroup>
           </Col>
 
@@ -71,13 +88,12 @@ export default class Home extends Component {
                     Total Harga : Rp 15.000
                     <strong className="float-right mr-2"></strong>
                   </h4>
-                  
+
                   <div className="d-grid gap-2">
                     <Button variant="primary" size="lg">
-                    <FontAwesomeIcon icon={faCartShopping} />
-                    <strong>BAYAR</strong>
+                      <FontAwesomeIcon icon={faCartShopping}  className="mr-2"/>
+                      <strong>BAYAR</strong>
                     </Button>
-                   
                   </div>
                 </Col>
               </Row>
